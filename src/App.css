@@ -1,4 +1,4 @@
-/* Global and root settings */
+k/* Global & root settings */
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -21,16 +21,16 @@ body, html {
 /* Container centers the content */
 .container {
   display: flex;
-  place-items: center;
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
   min-height: 100vh;
-  justify-content: center;
   background-color: #242424;
 }
 
 /* Card with glassmorphism */
 .content {
-  max-width: 400px;
   width: 90%;
+  max-width: 400px;
   padding: 2rem;
   background-color: rgba(36, 36, 36, 0.95);
   border-radius: 12px;
@@ -42,6 +42,10 @@ body, html {
 h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+}
+
+h3 {
+  margin-top: 15px;
 }
 
 /* Inputs */
@@ -78,7 +82,7 @@ button:hover {
   background-color: #2a2a2a;
 }
 
-/* Resized image styling */
+/* Resized & Original image styling */
 img.resized {
   margin-top: 10px;
   max-width: 100%;
@@ -119,3 +123,4 @@ a:hover {
     color: #747bff;
   }
 }
+

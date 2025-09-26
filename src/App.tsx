@@ -33,7 +33,23 @@ function App() {
     <div className="container">
       <div className="content">
         <h1>Image Resizer</h1>
+
+        {/* Upload input */}
         <input type="file" accept="image/*" onChange={handleImageUpload} />
+
+        {/* Preview original image */}
+        {image && (
+          <div>
+            <h3>Original Image:</h3>
+            <img
+              src={URL.createObjectURL(image)}
+              alt="Original"
+              className="resized"
+            />
+          </div>
+        )}
+
+        {/* Width & Height inputs */}
         <div className="inputs">
           <input
             type="number"
@@ -48,7 +64,11 @@ function App() {
             placeholder="Height"
           />
         </div>
+
+        {/* Resize button */}
         <button onClick={resizeImage}>Resize</button>
+
+        {/* Resized image */}
         {resizedImage && (
           <div>
             <h3>Resized Image:</h3>
@@ -65,3 +85,4 @@ function App() {
 }
 
 export default App;
+
