@@ -1,31 +1,50 @@
-k/* App.css */
+/* Global and root settings */
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-/* Make the screen a flex container to center everything */
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: #f5f5f5;
 }
 
-#root {
-  height: 100%;
-}
-
-.App {
+/* Container centers the content */
+.container {
   display: flex;
-  flex-direction: column;
-  justify-content: center; /* vertical center */
-  align-items: center;     /* horizontal center */
-  padding: 2rem;
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  place-items: center;
+  min-height: 100vh;
+  justify-content: center;
+  background-color: #242424;
+}
+
+/* Card with glassmorphism */
+.content {
   max-width: 400px;
-  margin: auto;
+  width: 90%;
+  padding: 2rem;
+  background-color: rgba(36, 36, 36, 0.95);
+  border-radius: 12px;
+  backdrop-filter: blur(16px);
   text-align: center;
 }
 
+/* Typography */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Inputs */
 .inputs {
   margin: 10px 0;
 }
@@ -39,22 +58,27 @@ body, html {
   text-align: center;
 }
 
+/* Buttons */
 button {
-  margin-top: 10px;
-  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  color: #fff;
   cursor: pointer;
-  border: none;
-  border-radius: 6px;
-  background-color: #646cff;
-  color: white;
-  font-weight: bold;
-  transition: background-color 0.3s;
+  transition: border-color 0.25s, background-color 0.25s;
+  margin-top: 10px;
 }
 
 button:hover {
-  background-color: #5056e2;
+  border-color: #646cff;
+  background-color: #2a2a2a;
 }
 
+/* Resized image styling */
 img.resized {
   margin-top: 10px;
   max-width: 100%;
@@ -64,3 +88,34 @@ img.resized {
   padding: 5px;
 }
 
+/* Links */
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+/* Light mode adjustments */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  .container {
+    background-color: #ffffff;
+  }
+  .content {
+    background-color: rgba(249, 249, 249, 0.95);
+  }
+  button {
+    background-color: #f9f9f9;
+    color: #000;
+  }
+  a:hover {
+    color: #747bff;
+  }
+}

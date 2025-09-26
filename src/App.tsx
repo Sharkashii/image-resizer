@@ -1,4 +1,4 @@
-kimport { useState } from "react";
+import { useState } from "react";
 import "./App.css";
 
 function App() {
@@ -30,37 +30,38 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <h1>Image Resizer</h1>
-      <input type="file" accept="image/*" onChange={handleImageUpload} />
-      <div className="inputs">
-        <input
-          type="number"
-          value={width}
-          onChange={(e) => setWidth(Number(e.target.value))}
-          placeholder="Width"
-        />
-        <input
-          type="number"
-          value={height}
-          onChange={(e) => setHeight(Number(e.target.value))}
-          placeholder="Height"
-        />
-      </div>
-      <button onClick={resizeImage}>Resize</button>
-      {resizedImage && (
-        <div>
-          <h3>Resized Image:</h3>
-          <img className="resized" src={resizedImage} alt="Resized" />
-          <br />
-          <a href={resizedImage} download="resized.png">
-            Download
-          </a>
+    <div className="container">
+      <div className="content">
+        <h1>Image Resizer</h1>
+        <input type="file" accept="image/*" onChange={handleImageUpload} />
+        <div className="inputs">
+          <input
+            type="number"
+            value={width}
+            onChange={(e) => setWidth(Number(e.target.value))}
+            placeholder="Width"
+          />
+          <input
+            type="number"
+            value={height}
+            onChange={(e) => setHeight(Number(e.target.value))}
+            placeholder="Height"
+          />
         </div>
-      )}
+        <button onClick={resizeImage}>Resize</button>
+        {resizedImage && (
+          <div>
+            <h3>Resized Image:</h3>
+            <img className="resized" src={resizedImage} alt="Resized" />
+            <br />
+            <a href={resizedImage} download="resized.png">
+              Download
+            </a>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
 
 export default App;
-
